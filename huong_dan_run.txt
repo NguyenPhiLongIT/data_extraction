@@ -1,5 +1,0 @@
-- Tải thư viện:
-pip install pymupdf openpyxl google-cloud-vision -U google-generativeai fpdf2
-- Chạy từng module riêng như sau:
-python + tên file
-vd: python read_pdf.py
