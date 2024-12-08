@@ -146,8 +146,7 @@ def create_index_page_with_links(input_pdf, index_data, output_pdf):
                 {
                     "kind": fitz.LINK_GOTO,
                     "from": rect,
-                    "page": 17
-                    + int(
+                    "page": 17 + int(
                         target_page
                     ),  # target_page - 1 vì trang trong PyMuPDF bắt đầu từ 0
                 }
