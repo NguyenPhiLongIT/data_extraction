@@ -25,7 +25,7 @@ def ocr_pdf(input_pdf, output_pdf, language="vie"):     #language="vie"/language
     except subprocess.CalledProcessError as e:
         print(f"Lỗi khi thực hiện OCR: {e}")
 
-def ocr_pdf_directory(input_dir, output_dir):
+def ocr_pdf_directory(input_dir, output_dir, language="vie"):
     input_dir = os.path.abspath(input_dir)
     output_dir = os.path.abspath(output_dir)
 
@@ -45,7 +45,16 @@ def ocr_pdf_directory(input_dir, output_dir):
                 print(f"Lỗi khi thực hiện OCR cho tệp {filename}: {e}")
 
 if __name__ == "__main__":
-    input_dir = "file"  
-    output_dir = "result"  
+    language_choice = input("Choose language OCR (1 - Vietnamese, 2 - English): ")
+    if language_choice == "1":
+        language = "vie"
+    elif language_choice == "2":
+        language = "eng"
+    else:
+        print("Use default: Vietnamese.")
+        language = "vie"
 
-    ocr_pdf_directory(input_dir, output_dir)
+    input_dir = "file"  
+    output_dir = "result"
+
+    ocr_pdf_directory(input_dir, output_dir, language)
