@@ -5,7 +5,7 @@ TESSERACT_PATH = os.path.abspath("lib/tesseract.exe")
 TESSDATA_PREFIX = os.path.abspath("lib/tessdata")
 GHOSTSCRIPT_PATH = os.path.abspath("./lib/gs10.04.0/bin/gswin64c.exe")
 
-def ocr_pdf(input_pdf, output_pdf, language="vie"):     #language="vie"/language="eng"
+def ocr_pdf(input_pdf, output_pdf, language):     #language="vie"/language="eng"
     try:
         env = os.environ.copy()
         env["TESSDATA_PREFIX"] = TESSDATA_PREFIX
@@ -25,7 +25,7 @@ def ocr_pdf(input_pdf, output_pdf, language="vie"):     #language="vie"/language
     except subprocess.CalledProcessError as e:
         print(f"Lỗi khi thực hiện OCR: {e}")
 
-def ocr_pdf_directory(input_dir, output_dir, language="vie"):
+def ocr_pdf_directory(input_dir, output_dir, language):
     input_dir = os.path.abspath(input_dir)
     output_dir = os.path.abspath(output_dir)
 
@@ -39,12 +39,13 @@ def ocr_pdf_directory(input_dir, output_dir, language="vie"):
             output_file_path = os.path.join(output_dir, filename) 
             try:
                 print(f"Đang thực hiện OCR cho tệp: {filename}")
-                ocr_pdf(file_path, output_file_path)
+                ocr_pdf(file_path, output_file_path, language)
                 print(f"OCR hoàn thành cho tệp: {filename}")
             except Exception as e:
                 print(f"Lỗi khi thực hiện OCR cho tệp {filename}: {e}")
 
 if __name__ == "__main__":
+    language = "vie"
     language_choice = input("Choose language OCR (1 - Vietnamese, 2 - English): ")
     if language_choice == "1":
         language = "vie"
