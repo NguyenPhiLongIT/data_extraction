@@ -10,7 +10,7 @@ pip install -r requirements.txt
 2. feature2 - like feature1 but extract into notion
 3. feature3 - ocr pdf image with vietnamese or english language option, it works on pdf with images no text
 
-##Details:
+## Details:
 1. OCR pdf image:
    - Dùng thư viện ocrmypdf kết hợp lib của Tesseract, trước khi sử dụng hãy tải lib của tesseract tại [đây](https://github.com/UB-Mannheim/tesseract/wiki)
    - Trường hợp sử dụng: với những pdf chỉ toàn ảnh, có 2 option ngôn ngữ là tiếng việt hoặc tiếng anh. Có thể import thêm ngôn ngữ cần muốn tại [đây](https://github.com/tesseract-ocr/tessdata.git) và bỏ nó vào thư mục feature3/lib/tessdata
