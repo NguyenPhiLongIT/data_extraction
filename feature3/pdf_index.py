@@ -11,7 +11,6 @@ import pdfplumber
 
 
 def parse_pages(pages_raw, total_pages):
-    """Phân tích danh sách số trang (hỗ trợ dải số và chỉ lấy số đầu nếu có)."""
     pages = pages_raw.replace(" ", "").split(",")
     expanded_pages = []
 
